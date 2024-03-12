@@ -1,4 +1,4 @@
-package  com.adilson.firstjobapp.job;
+package com.adilson.firstjobapp.job.models;
 public class Job{
 
     private String title;
