@@ -6,6 +6,7 @@ public class Job{
     private String minSalary;
     private String maxSalary;
     private String location;
+    private  String a;
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
@@ -13,7 +14,8 @@ public class Job{
         this.description = description;
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
-        this.minSalary = location;
+        this.location = location;
+
     }
 
    private Long id;

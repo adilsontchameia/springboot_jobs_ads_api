@@ -1,7 +1,7 @@
 package com.adilson.firstjobapp.job.impl;
 
 import com.adilson.firstjobapp.job.models.Job;
-import com.adilson.firstjobapp.job.JobService;
+import com.adilson.firstjobapp.job.service.JobService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,5 +23,15 @@ public class JobServiceImpl implements JobService {
 
         jobs.add(job);
 
+    }
+
+    @Override
+    public Job getJobById(Long id) {
+        for(Job job : jobs) {
+            if(job.getId().equals(id)){
+                return job;
+            }
+        }
+        return null;
     }
 }
