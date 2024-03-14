@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+//@RequestMapping(value = "/jobs")
 public class JobController{
     private JobService jobService;
 
@@ -49,7 +50,9 @@ public class JobController{
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/jobs/{id}")
+
+    @PutMapping("/jobs/{id}") //Specialized  and reduced code
+    //@RequestMapping(value = "/jobs/{id}",method = RequestMethod.PUT)
     public ResponseEntity<String> updateJob(@PathVariable Long id, @RequestBody Job updatedJob){
         boolean updated = jobService.updateJob(id,updatedJob);
         if(updated) return new ResponseEntity<>("Job updated succesfully", HttpStatus.OK);
