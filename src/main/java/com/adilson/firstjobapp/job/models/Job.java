@@ -1,5 +1,8 @@
 package com.adilson.firstjobapp.job.models;
 
+import com.adilson.firstjobapp.company.models.Company;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,10 +16,11 @@ public class Job{
     private String minSalary;
     private String maxSalary;
     private String location;
-
+    @ManyToOne
+    private Company company;
     //Entities are objects this is one of the requirement having default constructor for JPA to create instances of it
     //Without it JPA would not be able to create instances
-    public Job(Long id) {
+    public Job() {
     }
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
@@ -26,6 +30,13 @@ public class Job{
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Long getId() {
