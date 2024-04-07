@@ -1,12 +1,23 @@
 package com.adilson.firstjobapp.job.models;
-public class Job{
 
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "job_table")
+public class Job{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private String description;
     private String minSalary;
     private String maxSalary;
     private String location;
-    private  String a;
+
+    //Entities are objects this is one of the requirement having default constructor for JPA to create instances of it
+    //Without it JPA would not be able to create instances
+    public Job(Long id) {
+    }
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
@@ -15,10 +26,7 @@ public class Job{
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
-
     }
-
-   private Long id;
 
     public Long getId() {
         return id;

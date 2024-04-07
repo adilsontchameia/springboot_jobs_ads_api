@@ -1,4 +1,4 @@
-package com.adilson.firstjobapp.job.service;
+package com.adilson.firstjobapp.job.services;
 
 import com.adilson.firstjobapp.job.models.Job;
 

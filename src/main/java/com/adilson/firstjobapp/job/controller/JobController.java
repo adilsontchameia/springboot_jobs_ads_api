@@ -4,7 +4,7 @@ package com.adilson.firstjobapp.job.controller;
 import java.util.List;
 
 
-import com.adilson.firstjobapp.job.service.JobService;
+import com.adilson.firstjobapp.job.services.JobService;
 import com.adilson.firstjobapp.job.models.Job;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
